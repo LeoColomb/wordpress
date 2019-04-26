@@ -2,7 +2,7 @@ language: php
 php:
   - '7.3'
 
-script: php ./bin/update-repo.php
+script: php ./bin/build.php
 
 cache:
   directories:
@@ -10,4 +10,4 @@ cache:
 
 branches:
   only:
-    - master
+    - src

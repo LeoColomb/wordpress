@@ -1,7 +1,5 @@
 <?php
 
-namespace Roots\WordPressSelfUpdate;
-
 function makeComposerPackage($version, $zipURL)
 {
   return [
@@ -67,25 +65,4 @@ function buildBranch($version, $zipURL, $dir)
     makeComposerPackage($version, $zipURL),
     "${dir}/composer.json"
   );
-}
-
-// if run on cli
-if ($argv && $argv[0] && realpath($argv[0]) === __FILE__) {
-  $usage = "usage: build-branch.php {{version}} {{zip_url}} {{dir}}\n";
-
-  $args = array_slice($argv, 1);
-
-  if (count($args) === 1 && in_array($args[0], ['-h', '--help'])) {
-    echo $usage;
-    exit(0);
-  }
-
-  if (count($args) !== 3) {
-    echo $usage;
-    exit(1);
-  }
-
-  $result = buildBranch(...$args);
-  fwrite(STDERR, ($result ? 'success!' : 'failure'));
-  exit($result ? 0 : 1);
 }
