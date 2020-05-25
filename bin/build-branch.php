@@ -24,9 +24,9 @@ function makeComposerPackage($version, $zipURL)
       'php' => '>=5.3.2',
       'roots/wordpress-core-installer' => '>=1.0.0'
     ],
-    'provide': {
-        'wordpress/core-implementation': $version
-    },
+    'provide' => [
+        'wordpress/core-implementation' => $version,
+    ],
     'support' => [
       'issues' => 'https://core.trac.wordpress.org/',
       'forum' => 'https://wordpress.org/support/',
