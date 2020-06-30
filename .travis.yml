@@ -2,7 +2,9 @@ language: php
 php:
   - '7.3'
 
-script: php ./bin/build.php
+script:
+  - php ./bin/build.php
+  - composer validate --strict
 
 cache:
   directories:
